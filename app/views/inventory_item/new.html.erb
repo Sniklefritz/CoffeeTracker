@@ -1,0 +1,16 @@
+<h1>New Inventory Item</h1>
+<%= form_with scope: :inventory_item, local: true do |form| %>
+  <p>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+  <% end %>
