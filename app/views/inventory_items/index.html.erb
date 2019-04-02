@@ -1,3 +1,18 @@
 <h1>Inventory Index</h1>
+<table>
+  <tr>
+    <th>Inventory Item</th>
+  </tr>
+  <tr>
+    <th>Amount</th>
+  </tr>
+  <% @inventory_items.each do |inventory_item| %>
+    <tr>
+      <td><%= inventory_item.item_name %></td>
+      <td><%= inventory_item.amount %></td>
+      <td><%= link_to 'show' inventory_item_path(inventory_item) %></td>
+    </tr>
+  <% end %>
+</table>
 <%= link_to 'Home', root_path %>
 <%= link_to 'New Item', new_inventory_item_path %>
