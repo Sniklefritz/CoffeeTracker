@@ -4,13 +4,17 @@ class InventoryItemsController < ApplicationController
   end
 
   def new
+    @inventory_item = InventoryItem.new
   end
 
   def create
     @inventory_item = InventoryItem.new(inventory_item_params)
 
-    @inventory_item.save
-    redirect_to @inventory_item
+    if @inventory_item.save
+      redirect_to @inventory_item
+    else
+      render 'new'
+    end
   end
 
   def show
