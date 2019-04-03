@@ -21,6 +21,16 @@ class InventoryItemsController < ApplicationController
     end
   end
 
+  def update
+    @inventory_item = InventoryItem.find(params[:id])
+
+    if @inventory_item.update(inventory_item_params)
+      redirect_to @inventory_item
+    else
+      render 'edit'
+    end
+  end
+
   def show
     @inventory_item = InventoryItem.find(params[:id])
   end
