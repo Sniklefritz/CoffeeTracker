@@ -11,6 +11,7 @@
       <td><%= inventory_item.item_name %></td>
       <td><%= inventory_item.amount %></td>
       <td><%= link_to 'show', inventory_item_path(inventory_item) %></td>
+      <td><%= link_to 'edit', edit_inventory_item_path(inventory_item) %></td>
     </tr>
   <% end %>
 </table>

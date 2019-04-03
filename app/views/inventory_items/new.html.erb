@@ -1,5 +1,6 @@
 <h1>New Inventory Item</h1>
 <%= form_with scope: :inventory_item, url: inventory_items_path, local: true do |form| %>
+
   <% if @inventory_item.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -13,6 +14,7 @@
       </ul>
     </div>
   <% end %>
+
   <p>
     <%= form.label :item_name %>
     <%= form.text_field :item_name %>
