@@ -12,6 +12,9 @@
       <td><%= inventory_item.amount %></td>
       <td><%= link_to 'show', inventory_item_path(inventory_item) %></td>
       <td><%= link_to 'edit', edit_inventory_item_path(inventory_item) %></td>
+      <td><%= link_to 'Destroy', inventory_item_path(inventory_item),
+          method: :delete,
+          data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

@@ -35,6 +35,13 @@ class InventoryItemsController < ApplicationController
     @inventory_item = InventoryItem.find(params[:id])
   end
 
+  def destroy
+    @inventory_item = InventoryItem.find(params[:id])
+    @inventory_item.destroy
+
+    redirect_to inventory_items_path
+  end
+
   private
   def inventory_item_params
     params.require(:inventory_item).permit(:item_name, :amount)
