@@ -2,13 +2,13 @@
 <table>
   <tr>
     <th>Inventory Item</th>
-    <th>Amount</th>
+    <th>Amount On Cart</th>
     <th>Cost Per Item</th>
 </tr>
   <% @inventory_items.each do |inventory_item| %>
     <tr>
       <td><%= inventory_item.item_name %></td>
-      <td><%= inventory_item.amount %></td>
+      <td><%= inventory_item.amount_on_cart %></td>
       <td><%= inventory_item.cost_per %></td>
       <td><%= link_to 'show', inventory_item_path(inventory_item) %></td>
       <td><%= link_to 'edit', edit_inventory_item_path(inventory_item) %></td>

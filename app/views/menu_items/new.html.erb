@@ -4,11 +4,12 @@
     <%= form.text_field :product_name %>
   </p>
 
-  <% inventory_items = %>
   <p>
     <%= form.label :required_recipe_items %><br>
-    <% list = inventory_items.sort %>
-    <%= form.select :inventory_items, list %>
+    <%= form.collection_select :inventory_items, InventoryItem.order(:item_name), :id, :item_name, include_blank: true %>
+  </p>
+
+  <p>
     <%= form.label :recipe_item_amount %>
     <%= form.number_field :recipe_item_amount %>
   </p>
