@@ -1,4 +1,4 @@
-<%= form_with model: @inventory_item, local: true do |form| %>
+<%= form_with model: @inventory_item, local: true, html: {novalidate: true} do |form| %>
 
   <% if @inventory_item.errors.any? %>
     <div id="error_explination">

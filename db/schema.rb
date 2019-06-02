@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2019_06_02_015401) do
     t.datetime "updated_at", null: false
     t.integer "amount"
     t.string "item_name"
-    t.decimal "cost_per"
+    t.decimal "cost_per", precision: 5, scale: 3
   end
 
   create_table "menu_items", force: :cascade do |t|
