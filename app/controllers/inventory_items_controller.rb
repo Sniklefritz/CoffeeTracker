@@ -44,6 +44,6 @@ class InventoryItemsController < ApplicationController
 
   private
   def inventory_item_params
-    params.require(:inventory_item).permit(:item_name, :amount)
+    params.require(:inventory_item).permit(:item_name, :amount, :cost_per)
   end
 end

@@ -1,7 +1,15 @@
-<%= form_with scope: menu_item, local: true do |form| %>
+<%= form_with scope: :menu_item, url: menu_items_path, local: true do |form| %>
   <p>
     <%= form.label :product_name %><br>
     <%= form.text_field :product_name %>
   </p>
 
+  <% inventory_items = %>
+  <p>
+    <%= form.label :required_recipe_items %><br>
+    <% list = inventory_items.sort %>
+    <%= form.select :inventory_items, list %>
+    <%= form.label :recipe_item_amount %>
+    <%= form.number_field :recipe_item_amount %>
+  </p>
 <% end %>
