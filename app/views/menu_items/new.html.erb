@@ -4,13 +4,15 @@
     <%= form.text_field :product_name %>
   </p>
 
-  <p>
-    <%= form.label :required_recipe_items %><br>
-    <%= form.collection_select :inventory_items, InventoryItem.order(:item_name), :id, :item_name, include_blank: true %>
-  </p>
+  <% 5.times.each do %>
+    <p>
+      <%= form.label :required_recipe_items %><br>
+      <%= form.collection_select :inventory_items, InventoryItem.order(:item_name), :id, :item_name, include_blank: true %>
+    </p>
 
-  <p>
-    <%= form.label :recipe_item_amount %>
-    <%= form.number_field :recipe_item_amount %>
-  </p>
+    <p>
+      <%= form.label :recipe_item_amount %>
+      <%= form.number_field :recipe_item_amount %>
+    </p>
+  <% end %>
 <% end %>
